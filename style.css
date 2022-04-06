@@ -1,0 +1,100 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.calculator-container {
+    display: grid;
+    border: 2px solid #ff8d8d;
+    width: 450px;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(6, auto);
+    gap: 2px;
+    background-color: #ff8d8d;
+}
+
+
+.calculator-container > div {
+    background-color: #fffefb;
+    padding: 20px 10px;
+    font-size: 64px;
+}
+
+.display {
+    display: flex;
+    flex-direction: column-reverse;
+    color: #626262;
+    grid-row: 1;
+    grid-column: 1 / span 4;
+    height: 100px;
+    text-align: right;
+}
+
+.zero {
+    grid-row: 6;
+    grid-column: span 2;
+}
+
+/* item 16 */
+.add {
+    grid-row: 3;
+    grid-column: 4;
+}
+
+/* item 17 */
+.subtract {
+    grid-row: 4;
+    grid-column: 4;
+}
+
+/* item 18 */
+.equal {
+    grid-row: 5 / span 2;
+    grid-column: 4;
+    height: auto;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    height: 100px;
+    background-color: #ffc4c3;
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 100;
+}
+
+button:hover {
+    background-color: #ffe1de;
+    color: #ff8d8d;
+}
+
+.clear,
+.negPos,
+.divide,
+.multiply,
+.add,
+.subtract,
+.equal {
+    background-color: #ffa8a7;
+}
+
+/* 
+clear
+negPos
+divide
+multiply
+add
+subtract
+equal
+ */
