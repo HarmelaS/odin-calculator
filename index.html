@@ -12,30 +12,29 @@
 <body>
     <header><h1>CALCULATOR</h1></header>
     <main>
-        <div class="calculator-container">
-            <div class="display">
+        <div class="calculator">
+            <div class="calculator-display">
                 
             </div>
-       
-                <button class="clear">c</button>
-                <button class="negPos">±</button>
-                <button class="divide">÷</button>  
-                <button class="multiply">×</button>
-                <button class="one" value="1">1</button>
-                <button class="two" value="2">2</button>
-                <button class="three" value="3">3</button>
-                <button class="four" value="4">4</button>  
-                <button class="five" value="5">5</button>
-                <button class="six" value="6">6</button>
-                <button class="seven" value="7">7</button>
-                <button class="eight" value="8">8</button>
-                <button class="nine" value="9">9</button>
-                <button class="zero" value="0">0</button>
-                <button class="decimal">.</button>
-                <button class="add">+</button>
-                 <button class="subtract">-</button>
-                <button class="equal">=</button>
-     
+            <div class="calculator-keys">
+                <button class="key-operator" data-action="add">+</button>
+                <button class="key-operator" data-action="subtract">-</button>
+                <button class="key-operator" data-action="multiply">&times;</button>
+                <button class="key-operator" data-action="divide">÷</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>0</button>
+                <button data-action="decimal">.</button>
+                <button data-action="clear">c</button>
+                <button class="key-equal" data-action="calculate">=</button>
+            </div>
         </div>
     </main>
 </body>
