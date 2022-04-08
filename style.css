@@ -1,4 +1,18 @@
+.calculator-display {
+    font-size: 40px;
+}
+
 button {
     width: 100px;
     height: 100px;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: repeat(4, auto);
+}
+
+.pressedButton {
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
