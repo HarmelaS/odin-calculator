@@ -2,22 +2,17 @@
 const calculator = document.querySelector('.calculator');
 const keys = calculator.querySelector('.calculator-keys');
 const display = document.querySelector('.calculator-display');
-
+let counter = 0;
 
 const operate = (n1, operator, n2) => {
     let result = '';
-    // calculator.dataset.previousKeyType = "operate";
     if (operator === "add") {
-        // result = parseFloat(n1) + parseFloat(n2);
         result = add(n1, n2);
     } else if (operator === "subtract"){
-        // result = parseFloat(n1) - parseFloat(n2);
         result = subtract(n1,n2);
     } else if (operator === "multiply"){
-        // result = parseFloat(n1) * parseFloat(n2);
         result = multiply(n1, n2);
     } else if (operator === "divide"){
-        // result = parseFloat(n1) / parseFloat(n2);
         if(n2 === "0"){
           result = "error";
         } else{
@@ -44,7 +39,6 @@ function divide(a,b) {
     return parseFloat(a) / parseFloat(b);
 } 
 
-
 keys.addEventListener('click', e => {
     if (e.target.matches('button')) {
         // determines type of key
@@ -53,14 +47,13 @@ keys.addEventListener('click', e => {
         const keyContent = key.textContent;
         const displayNumber = display.textContent;
         const previousKeyType = calculator.dataset.previousKeyType;
-
         Array.from(key.parentNode.children).forEach(k => k.classList.remove('pressedButton'));
-
+        
         if (!action){
-            console.log("number key");
             if (displayNumber === "0" || previousKeyType === 'operator' || previousKeyType === 'calculate'){
                 display.textContent = keyContent;
             } else {
+               
                 display.textContent = displayNumber + keyContent;
             }
             calculator.dataset.previousKeyType = "number";
@@ -89,12 +82,10 @@ keys.addEventListener('click', e => {
             // check if firstValue and operator exists because secondValue always exists
             // if a user hits a number, operator, number, then another operator - display updates to calculated value
             if (firstValue && operator && previousKeyType !== 'operator' && previousKeyType !== 'calculate') {
-                
                 const calcValue = operate(firstValue, operator, secondValue);
                 display.textContent = calcValue;
                 // calculated value becomes first value when making multiple equations
                 calculator.dataset.firstValue = calcValue;
-                // display.textContent = operate(firstValue, operator, secondValue);
             } else {
                 calculator.dataset.firstValue = displayNumber;
             }
@@ -111,11 +102,12 @@ keys.addEventListener('click', e => {
                 calculator.dataset.modValue = '';
                 calculator.dataset.operator = '';
                 calculator.dataset.previousKeyType = '';
+            
             } else {
                 key.textContent = "AC";
             }
 
-            display.textContent = 0;
+            display.textContent = '';
             calculator.dataset.previousKeyType = "clear";
         }
 
